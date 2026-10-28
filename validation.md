@@ -1,20 +1,22 @@
-# Validation record and limits
+# Validation evidence and limitations
 
-Checks below were performed by AI during this working session. They do not establish client approval, business execution or measured human working time. Timing evidence and estimates are distinguished below.
+Checks below were performed with AI and local scripts. They do not establish client approval or business execution.
 
-## Recaps: source and policy comparison
+## Source checks
 
-| Output | Checked against original source | Result and exceptions |
+| Output | Evidence | Result |
 |---|---|---|
-| [A1](brain/knowledge/meetings/2026-09-22-kettle-and-crumb.md) | [call 1](inbox/call-1.md), 00:29 to 01:36; prior meetings linked in recap | Five summary bullets; five supported owner/date rows. Tuesday night, Wednesday, tomorrow and Friday resolve to 22, 23, 23 and 25 September. Marcus's “Yes, from this Wednesday” supports reporting ownership. Sample shipment lacks an owner, so stays open. Private post-departure content omitted; weekly performance values not copied. No approval or shipment completion inferred. |
-| [A2](brain/knowledge/meetings/2026-09-24-kettle-and-crumb.md) | [call 2](inbox/call-2.md), 00:05 to 01:13; reference sheet | Five summary bullets; Marcus's plan due next Tuesday resolves to 29 September. Sample-list date remains unresolved rather than guessed. Reported GMV is withheld from the brain, with the candidate value confined to the explicit [approval proposal](proposed-changes.md). Role and budget changes attributed to the call; no source-page edits. |
-| [C2 after](workers/output/after-recap.md) | [source](workers/output/bad-recap-source.md), 00:08 to 00:37; 10 September recap and sheet | Four summary bullets; Lena's Friday brief is due 18 September. Format-performance assessment attributed to Theo. Size-chart investigation lacks owner/date; earlier chart-delivery action is not treated as the same task. Restricted content and call GMV value omitted. Sheet and call periods differ, and the sheet postdates the call, so discrepancy is not automatically a corrected historical value. |
+| [A1 recap](brain/knowledge/meetings/2026-09-22-kettle-and-crumb.md) | [Call 1](inbox/call-1.md), 00:29 to 01:36, and linked prior meetings | Five supported action rows; relative dates resolve to 22, 23 and 25 September. Shipment ownership remains open. Private content and copied performance figures excluded. |
+| [A2 recap](brain/knowledge/meetings/2026-09-24-kettle-and-crumb.md) | [Call 2](inbox/call-2.md), 00:05 to 01:13, and reference sheet | Marcus's plan is due 29 September. Sample-list Thursday and GMV comparability remain unresolved. The candidate GMV update appears only in the approval proposal. |
+| [C2 result](workers/output/after-recap.md) | [Source](workers/output/bad-recap-source.md), 00:08 to 00:37, and 10 September meeting | Four summary bullets; Lena's brief due 18 September; size-chart investigation and October delivery details remain open. Prior decisions linked and private content excluded. |
 
-Client sample-shipping budgets, targets and creator commission rates are treated as permitted decisions under RESOLVER's explicit allowance for client-agreed rates. SANITIZER's prohibition on our fees, margins and rates is interpreted as Brightline's commercial terms. A3 includes creator incentives as the dated 12 August agreement, without claiming they were reconfirmed later. This corrects an earlier overly broad omission. No private source claims were used to diagnose adoption or influence the client briefing.
+Client sample budgets, targets and creator commissions are treated as client-agreed decisions under RESOLVER. SANITIZER's prohibition on our fees, margins and rates is interpreted as Brightline's commercial terms. The briefing dates the creator-rate agreement rather than claiming later reconfirmation. The later GMV claims and reference figures have different or unclear reporting periods, so a numerical difference does not establish like-for-like growth.
 
-## First fresh-session evaluation, archived
+## C2 fresh-session evaluation
 
-Native child `/root/fresh_recap` was launched with `fork_turns: none`. Its task allowed only the updated skill, brain files and `workers/output/bad-recap-source.md`; no parent conversation, old recap, diagnosis or proposals were supplied. It had a separate conversation but the same filesystem, so the read restriction was instructional, not a filesystem sandbox. The child reported reading only:
+Two independent conversations were launched with no inherited conversation (`fork_turns: none`). Each was instructed to read only the skill, brain and source transcript. The first [skill version](workers/output/skill-recap-v1.md) and [result](workers/output/after-recap-v1.md) are preserved. After simplifying the skill to reference authoritative policies, the second session generated the current [after recap](workers/output/after-recap.md), which has not been manually edited.
+
+Both sessions reported reading:
 
 ```
 workers/skills/skill-recap.md
@@ -27,45 +29,17 @@ brain/knowledge/reference/accounts-sheet.csv
 brain/knowledge/meetings/2026-09-10-loop-athletic-weekly.md
 ```
 
-It also listed brain filenames. It wrote only the after file. That evaluated [skill version](workers/output/skill-recap-v1.md) and [first result](workers/output/after-recap-v1.md) are now archived unchanged. The primary session compared that result with the source and rules and ran its own validator. Evaluation outputs live outside the brain to preserve separation and the before file; their links resolve relative to that location.
-
-The child's first PowerShell summary counter returned zero due to `.Split()` semantics. It replaced that check with regex extraction and got four summary bullets, one action row, and a matching reference row. This corrected a validation command, not recap content. The child checked source/link existence, Friday date resolution, withheld-value/quote fragments and saved-file contents; the primary rechecked rather than relying solely on its completion claim.
-
-## Policy-reference revision and current fresh-session evaluation
-
-The applicant proposed keeping company rules authoritative in their existing files instead of duplicating them in the skill. The revision makes those reads mandatory on every run and retains extraction, uncertainty handling, source verification and safe file-delivery steps. Missing policy files stop the run.
-
-A new native child, `/root/fresh_recap_v2`, was launched with `fork_turns: none` and the same source-only read restrictions. It reported reading the same eight inputs listed above, listing brain paths, and reading its newly generated output for validation. Prior outputs and this conversation were not supplied. As before, it shared a filesystem; restrictions were instructional rather than sandbox-enforced.
-
-The current [after recap](workers/output/after-recap.md) was generated by this second session and has not been manually edited. It has four summary bullets, Lena's supported 18 September brief commitment, explicit size-chart and October-delivery questions, linked history, a period-aware GMV flag, and a generic private-content flag. The primary reread it against the transcript and confirmed its links and policy handling. The structural validator returned zero errors/warnings, and all six checker tests passed again. One repeated source case is limited evidence, not a broad reliability evaluation; creator-rate handling has not been separately exercised by this Loop Athletic transcript.
+They also listed brain filenames and reread their generated output. The old recap, diagnosis and previous results were not supplied. The conversations shared a filesystem, so the read restrictions were instructional, not sandbox-enforced. The final output was compared with the transcript, policies and earlier meeting, then checked programmatically. One source case demonstrates this improvement, not broad reliability; the creator-rate interpretation was not separately exercised by this transcript.
 
 ## Reproducible checks
 
-- `python extra/metrics.py`: 140 distinct call IDs; nonnegative posting delays; all held, recorded and timely counts match dashboard counts. Rates: North 36/40 = 90%, East 21/30 = 70%, South 14/40 = 35%, West 3/30 = 10%. South median posting delay is 74 minutes across 34 posts, excluding missing timestamps. East's displayed rate is inconsistent with the all-call denominator.
-- Independent PowerShell `Import-Csv` grouping and datetime subtraction returned the same held/timely counts and rates. Calendar checks confirmed 23 September is Wednesday, 25 September Friday and 29 September Tuesday. The conditional sample illustration was checked as 70 × $8 = $560, within $600; it is not a confirmed shipping allocation.
-- `python extra/validate.py brain/knowledge/meetings/2026-09-22-kettle-and-crumb.md brain/knowledge/meetings/2026-09-24-kettle-and-crumb.md workers/output/after-recap.md`: zero errors and zero review warnings for all three.
-- The original bad recap produces three structural errors and two policy-review warnings, with exit code 1 as expected. Warnings now show line numbers rather than echoing suspect content. The checker cannot identify every private statement, unsupported fact or incorrect owner.
-- `python -m unittest discover -s extra -p test_validate.py -v`: six tests passed, covering known good/bad output, missing owner, invalid action date, broken link and invalid meeting date.
-- The initial HTML layout was visually inspected at widths 900 and 390 pixels: readable table, no visible clipping, working responsive layout, and no reported console messages. Subsequent wording updates align it with the revised pilot. The final local check covered 98 Markdown links in output documents and the HTML's local links; all resolve. The ticket has 124 whitespace-delimited words, below 150. The summary links to the submission branch. Subsequent publication checks are recorded below.
+- `python extra/metrics.py`: 140 distinct calls; all dashboard counts reconcile; timely rates are 90%, 70%, 35% and 10%. Independent datetime-based recounting confirmed the results. East's displayed 75% is inconsistent with the all-call denominator.
+- `python extra/validate.py brain/knowledge/meetings/2026-09-22-kettle-and-crumb.md brain/knowledge/meetings/2026-09-24-kettle-and-crumb.md workers/output/after-recap.md`: zero errors and warnings for all three. The supplied bad recap returns three structural errors and two review warnings.
+- `python -m unittest discover -s extra -p test_validate.py -v`: six tests passed. Keyword checks cannot prove confidentiality, factual accuracy or correct ownership.
+- Calendar dates, the conditional 70-box budget illustration and relative document links were checked. The engineering ticket is 124 words. The extra-credit README is five lines; the activity log is ten.
+- The report rebuilds byte-for-byte. Unauthenticated live browser checks at 390 and 1280 pixels confirmed HTTP 200, eight correctly valued bars, embedded fonts, full-width text, no horizontal page overflow and no JavaScript errors. The report makes no third-party resource requests. Four document links initially hit bulk-request throttling; normal browser retests returned 200.
+- All 46 tracked paths and published branch history were audited for temporary files and common credential patterns. No tracked caches, dependency folders, databases, environment files or media dumps were found. All 21 original files other than the required skill revision remain byte-for-byte unchanged; the original 22-file baseline is preserved in history.
 
-The applicant then requested the saved `html-report` template and full container-width text. The report was rebuilt with that template's component styles and embedded fonts. Its finishing script passed. A separate visual review inspected desktop light, mobile and dark screenshots; minor chart alignment and mobile table issues were corrected. Final browser measurements at 390 and 1280 pixels confirmed no page overflow, no paragraph width caps, a fitting comparison table, eight rendered bars and no JavaScript errors; desktop chart tops align. Rebuilding uses the copied portable template, not a machine-specific skill path. These are layout checks, not evidence of hosted access or business execution.
+## Limits
 
-## Timing estimate method
-
-Local session metadata contained 37 completed primary-session turn windows before the final publishing task. Summing matching task-start/task-complete timestamps gave 48.9 minutes, including tool calls and waits; overnight and between-turn gaps were excluded. Approximately one AI hour is a rough reporting estimate including final publication work, not a CPU-time measurement. Parallel child work is not added again.
-
-Human time was not recorded. Between completed turns and the next request, gaps of at most five minutes totaled 65.3 minutes; gaps of at most fifteen minutes totaled 93.9 minutes. These thresholds are heuristics, not proof of continuous human work, and omit reading during AI turns or work in other tools. The proposed 1 to 1.5 human hours is explicitly tentative; these logs cannot verify actual human working time. Calendar span is not treated as working time.
-
-## Publication preparation
-
-At the applicant's explicit request, repository visibility was changed to public. The report's supporting links now point to GitHub documents so they remain readable on GitHub Pages. The generated root index and summary share the same report content; embedded fonts and charts require no third-party resource requests. GitHub Pages deployment completed successfully from `block-c` with HTTPS enforced. The public artifact is https://karroge10.github.io/ironside-case-study/; the direct `summary.html` endpoint also returns HTTP 200.
-
-Fresh unauthenticated browser contexts at 1280 and 390 pixels verified: HTTP 200, the expected title, all eight correctly valued chart bars, embedded font loading, full-width paragraphs, no horizontal page overflow, no JavaScript errors and no third-party resource requests. All 16 report links point to public repository files or the working-folder branch and were checked against actual paths. Bulk HTTP checks initially returned GitHub throttling (429) for four document links; normal browser navigation to all four affected files then returned 200. This was a request-rate issue, not missing source files.
-
-Repository visibility was independently verified with an unauthenticated GitHub API request. The original baseline commit `e09d80872fdbd0c8bc8958a3abc732f2bebc7b4c` matches all 22 ZIP files byte-for-byte. Publication does not establish that the proposed business pilot ran or that unresolved source questions were answered.
-
-## Final repository audit and merge
-
-Audited all 46 tracked paths for caches, dependencies, databases, environment files, media dumps and common credential patterns; none were found. The v1 skill/result are intentional C2 evaluation evidence. Removed unused image-viewer and non-bar-chart code plus unused component styles from the portable report template. Embedded fonts, the generated index and named summary are intentional portability/publication assets.
-
-The approved submission is merged into `main`; report links and the Pages source use `main`. All 21 original files other than the assignment-authorized skill revision remain byte-for-byte unchanged. The original 22-file baseline remains in history. Timing estimates retain their explicit uncertainty, and no client action, pilot execution or interview booking is claimed.
+The pilot is proposed, not executed. Unknown owners, dates, definitions and completion status remain explicitly flagged. The skill evaluation and checker do not establish performance on unseen calls. Time figures in [log.md](log.md) are approximate: completed AI-turn metadata supports the AI estimate, but human working time was not measured and cannot be verified from discussion gaps.
