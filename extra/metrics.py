@@ -24,7 +24,7 @@ def calculate():
         recorded = sum(r['recorded'] == 'yes' for r in rows)
         d = dashboard[pod]
         assert (len(rows), recorded, timely) == (int(d['client_calls_held']), int(d['calls_recorded']), int(d['recaps_posted_within_1hr']))
-        result.append(dict(pod=pod, calls=len(rows), recorded=recorded, timely=timely, late=len(delays)-timely, missing=len(rows)-len(delays), rate=100*timely/len(rows), capture_rate=100*recorded/len(rows), timely_of_recorded=100*timely/recorded, median_post_minutes=median(delays), dashboard_rate=d['share_of_calls_with_recap_within_1hr'], posted_by=dict(Counter(r['posted_by'] for r in posted)), gap_to_80=max(0, int(0.8*len(rows)+0.999999)-timely)))
+        result.append(dict(pod=pod, calls=len(rows), recorded=recorded, timely=timely, late=len(delays)-timely, missing=len(rows)-len(delays), rate=100*timely/len(rows), capture_rate=100*recorded/len(rows), timely_of_recorded=100*timely/recorded, median_post_minutes=median(delays), dashboard_rate=d['share_of_calls_with_recap_within_1hr'], dashboard_rate_mismatch=abs(float(d['share_of_calls_with_recap_within_1hr'].rstrip('%')) - 100*timely/len(rows)) > 0.05, posted_by=dict(Counter(r['posted_by'] for r in posted)), gap_to_80=max(0, int(0.8*len(rows)+0.999999)-timely)))
     return sorted(result, key=lambda r: r['rate'], reverse=True)
 
 

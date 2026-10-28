@@ -22,7 +22,10 @@ def check(path):
     meeting_date = re.search(r'^date:\s*(.+)$', metadata, re.M)
     if meeting_date:
         try:
-            date.fromisoformat(meeting_date.group(1).strip())
+            value = meeting_date.group(1).strip()
+            if not re.fullmatch(r'[0-9]{4}-[0-9]{2}-[0-9]{2}', value):
+                raise ValueError
+            date.fromisoformat(value)
         except ValueError:
             errors.append('Meeting date needs exact ISO date')
     source = re.search(r'^source:\s*(.+)$', metadata, re.M)
@@ -35,24 +38,27 @@ def check(path):
         table = text[positions[1]:positions[2]]
         if '| Owner | Action | Due |' not in table:
             errors.append('Missing action table header')
-        for line in table.splitlines():
-            if not line.startswith('|') or 'Owner' in line or re.fullmatch(r'[|\s:-]+', line):
+        for number, line in enumerate(table.splitlines(), text[:positions[1]].count('\n') + 1):
+            if not line.startswith('|') or line.strip() == '| Owner | Action | Due |' or re.fullmatch(r'[|\s:-]+', line):
                 continue
             cells = [c.strip() for c in line.strip('|').split('|')]
             if len(cells) != 3 or not all(cells):
-                errors.append('Incomplete action row: ' + line)
+                errors.append(f'Incomplete action row at line {number}')
                 continue
             try:
+                if not re.fullmatch(r'[0-9]{4}-[0-9]{2}-[0-9]{2}', cells[2]):
+                    raise ValueError
                 date.fromisoformat(cells[2])
             except ValueError:
-                errors.append('Action needs exact ISO date: ' + cells[2])
-            if re.search(r'\b(TBD|unknown|unassigned)\b|/| & ', cells[0], re.I):
-                errors.append('Action needs one confirmed owner: ' + cells[0])
-    for label, target in re.findall(r'\[([^\]]+)\]\(([^)]+)\)', text):
-        if '://' not in target and not (path.parent / target.split('#')[0]).exists():
-            errors.append('Broken link: ' + target)
+                errors.append(f'Action needs exact ISO date at line {number}')
+            if re.search(r'\b(TBD|unknown|unassigned|and)\b|/|&|;|,', cells[0], re.I):
+                errors.append(f'Action needs one confirmed owner at line {number}')
     for number, line in enumerate(text.splitlines(), 1):
-        if re.search(r'\b(GMV|ad spend|retention|active affiliates)\b', line, re.I) and re.search(r'\$[\d,]+|\b\d+(?:\.\d+)?\s*%|\b\d+[Kk]\b', line):
+        for target in re.findall(r'\[[^\]]+\]\(([^)]+)\)', line):
+            if '://' not in target and not (path.parent / target.split('#')[0]).exists():
+                errors.append(f'Broken link at line {number}')
+    for number, line in enumerate(text.splitlines(), 1):
+        if re.search(r'\b(GMV|ad spend|retention|active affiliates)\b', line, re.I) and re.search(r'\b\d[\d,]*(?:\.\d+)?[Kk]?\b', re.sub(r'\b\d+[- ]day\b', '', line, flags=re.I)):
             warnings.append(f'Review possible copied performance metric at line {number}')
         if re.search(r'\b(flaky|difficult|checked out|between us|agency fees|margin|commission|DMed|home address|phone number)\b', line, re.I):
             warnings.append(f'Review possible restricted content at line {number}')
@@ -64,10 +70,10 @@ if __name__ == '__main__':
     parser.add_argument('paths', nargs='+')
     args = parser.parse_args()
     failed = False
-    for name in args.paths:
+    for input_number, name in enumerate(args.paths, 1):
         path = ROOT / name
         errors, warnings = check(path)
-        print(f'{name}: {len(errors)} errors, {len(warnings)} review warnings')
+        print(f'Input {input_number}: {len(errors)} errors, {len(warnings)} review warnings')
         for message in errors:
             print('ERROR:', message)
         for message in warnings:

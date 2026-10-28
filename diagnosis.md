@@ -5,7 +5,7 @@ Compare the preserved [before](workers/output/bad-recap.md) with the [source tra
 | Failure | Evidence | Required behavior |
 |---|---|---|
 | Private content leaked | The last sentence draws from a DM pasted after the client left, source 00:42 to 00:52. | Omit it completely; use a generic withheld-content flag. Do not turn it into an account-risk action. |
-| Performance value copied and conflict hidden | The GMV sentence repeats the call value, which differs from the sheet's `loop-athletic` row. | Link the sheet and flag reconciliation without reproducing the call figure in the brain. |
+| Performance value copied and conflict hidden | The GMV sentence repeats the call value, which differs from the sheet's `loop-athletic` row. The call is month-to-date; the later sheet is trailing 30 days, so this does not establish that either value is wrong. | Link the sheet and flag reconciliation without reproducing the call figure in the brain. |
 | Unsupported certainty | “Great call” is editorial; the format-performance claim is presented as fact rather than Theo's assessment at 00:14. | Remove praise and attribute the reported assessment. Do not infer causality from the GMV remark. |
 | Missing action ownership and dates | October brief at 00:26 to 00:30 is Lena's commitment for Friday, 18 September. Size-chart issue at 00:33 to 00:37 has no specific assignee or date. | Table the supported brief commitment; put the size-chart follow-up in open questions. Do not assign Theo based on the older chart-delivery task. |
 | Missing structure and provenance | No attendees/source metadata, Summary section, action table, Open questions or Flags for a person. | Follow the resolver template, including 3 to 6 summary bullets. |

@@ -14,7 +14,7 @@ Start with the [rendered summary](https://karroge10.github.io/ironside-case-stud
 | C3 | [Engineering ticket](fde-ticket.md) | Complete |
 | Extra | [Runnable tools](extra/README.md) | Complete |
 
-All nine assessment questions and the optional extra credit are completed. See [usage and approximate time](log.md) and [validation evidence and limitations](validation.md).
+All nine assessment questions and the optional extra credit are completed. See [usage and approximate time](log.md), [validation evidence and limitations](validation.md), and the [prioritized improvement roadmap](roadmap.md).
 
 ## Reproduce results
 
