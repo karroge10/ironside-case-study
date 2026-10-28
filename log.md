@@ -1,5 +1,5 @@
-Human hours: pending applicant verification.
-AI hours: pending applicant verification; no elapsed time was measured.
+Human hours: tentative estimate of 1 to 1.5 active hours from discussion gaps, not a measured total; applicant confirmation required.
+AI hours: approximately 1 hour; local logs show 48.9 minutes across 37 completed turns before final publishing, including tools/waits and excluding idle gaps.
 First instruction (excerpt): "Start by reading INSTRUCTIONS.md in full, followed by brain/RESOLVER.md, brain/SANITIZER.md, brain/NOW.md, and the relevant source files."
 Used AI for source-linked drafts, Python calculations, recap-instruction revisions, fresh-session testing, an evidence-linked engineering ticket and a lightweight validator.
 Correction 1: validator warnings echoed potentially restricted text; inspecting the test output caught it. Changed the code to report line numbers only and tested it.

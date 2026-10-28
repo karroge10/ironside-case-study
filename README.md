@@ -1,6 +1,6 @@
 # Ironside assessment: working folder
 
-Start with [summary.html](summary.html), the client-facing brief. All conclusions use the provided September 2026 snapshot, not live business data. No people, account or reference-sheet updates have been applied.
+Start with the [rendered summary](https://karroge10.github.io/ironside-case-study/) or open [summary.html](summary.html) locally. All conclusions use the provided September 2026 snapshot, not live business data. No people, account or reference-sheet updates have been applied.
 
 | Task | Output | Status |
 |---|---|---|
@@ -27,15 +27,15 @@ python -m unittest discover -s extra -p test_validate.py -v
 python extra/build_summary.py
 ```
 
-Edit Markdown outputs directly. Edit `extra/build_summary.py` and rebuild to change the summary, or update the CSV only in a separate live-exercise copy and recalculate. The static narrative in `metrics.md`, `plan.md` and the summary must also be reviewed if data changes. The original bad recap is expected to fail validation.
+Edit Markdown outputs directly. Edit `extra/build_summary.py` and rebuild to change the summary; its portable layout and embedded fonts are in `extra/report-template.html`, based on the applicant's saved report template. Update the CSV only in a separate live-exercise copy and recalculate. The static narrative in `metrics.md`, `plan.md` and the summary must also be reviewed if data changes. The original bad recap is expected to fail validation.
 
 To repeat C2 independently, open a new AI session with no inherited conversation and give it only `workers/skills/skill-recap.md`, `brain/` and `workers/output/bad-recap-source.md`. Ask it to follow the skill and save a new evaluation recap in `workers/output/`; do not show it the before, after or diagnosis. Check the new file against the source and policy. The current after file is retained outside the brain to keep the evaluation separate; its relative links match that location.
 
 ## Share the working folder
 
-The private working repository is [ironside-case-study](https://github.com/karroge10/ironside-case-study). Use the [block-c submission branch](https://github.com/karroge10/ironside-case-study/tree/block-c) for the assembled work; `main` retains the original assessment until a final merge is explicitly approved. Grant the assessor repository access before sending the link. Keep raw transcripts and the original bad recap in the restricted assessment folder; share the sanitized summary with the intended assessment audience.
+The public working repository is [ironside-case-study](https://github.com/karroge10/ironside-case-study). Use the [block-c submission branch](https://github.com/karroge10/ironside-case-study/tree/block-c) for the assembled work; `main` retains the original assessment until a final merge is explicitly approved. The supplied fictional source materials remain preserved. Public access was explicitly requested by the applicant.
 
-Rebuild with `python extra/build_summary.py --folder-url "https://github.com/karroge10/ironside-case-study/tree/block-c"`. The local HTML opens from a downloaded working folder; its supporting document links are relative. GitHub's normal file viewer does not render HTML as a web page. Publishing a separate artifact is still pending: use an appropriate restricted host and preserve the supporting paths or adapt the links, then test artifact and folder access as a recipient. 
+GitHub Pages serves the rendered report from `block-c` at [the artifact URL](https://karroge10.github.io/ironside-case-study/), while the repository provides the working files. Rebuild with `python extra/build_summary.py`; it produces identical `summary.html` and `index.html`, with supporting links pointing to readable GitHub documents. For relative links in an offline working-folder copy, use `python extra/build_summary.py --source-base-url=`. Push an approved report update to `block-c` to trigger a Pages rebuild. 
 
 ## Three sentences for the submission
 
