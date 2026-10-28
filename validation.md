@@ -1,6 +1,6 @@
 # Validation record and limits
 
-Checks below were performed by AI during this working session. They do not assert applicant review, client approval, production delivery or elapsed time.
+Checks below were performed by AI during this working session. They do not establish client approval, business execution or measured human working time. Timing evidence and estimates are distinguished below.
 
 ## Recaps: source and policy comparison
 
@@ -58,4 +58,8 @@ Human time was not recorded. Between completed turns and the next request, gaps 
 
 ## Publication preparation
 
-At the applicant's explicit request, repository visibility was changed to public. The report's supporting links now point to GitHub documents so they remain readable on GitHub Pages. The generated root index and summary share the same report content; embedded fonts and charts require no third-party resource requests. Live checks follow deployment.
+At the applicant's explicit request, repository visibility was changed to public. The report's supporting links now point to GitHub documents so they remain readable on GitHub Pages. The generated root index and summary share the same report content; embedded fonts and charts require no third-party resource requests. GitHub Pages deployment completed successfully from `block-c` with HTTPS enforced. The public artifact is https://karroge10.github.io/ironside-case-study/; the direct `summary.html` endpoint also returns HTTP 200.
+
+Fresh unauthenticated browser contexts at 1280 and 390 pixels verified: HTTP 200, the expected title, all eight correctly valued chart bars, embedded font loading, full-width paragraphs, no horizontal page overflow, no JavaScript errors and no third-party resource requests. All 16 report links point to public repository files or the working-folder branch and were checked against actual paths. Bulk HTTP checks initially returned GitHub throttling (429) for four document links; normal browser navigation to all four affected files then returned 200. This was a request-rate issue, not missing source files.
+
+Repository visibility was independently verified with an unauthenticated GitHub API request. The `main` tree still matches all 22 original ZIP files byte-for-byte. Publication does not establish that the proposed business pilot ran or that unresolved source questions were answered.
