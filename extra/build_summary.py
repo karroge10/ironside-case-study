@@ -5,8 +5,8 @@ import re
 from metrics import ROOT, calculate
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--folder-url', default='https://github.com/karroge10/ironside-case-study/tree/block-c')
-parser.add_argument('--source-base-url', default='https://github.com/karroge10/ironside-case-study/blob/block-c/')
+parser.add_argument('--folder-url', default='https://github.com/karroge10/ironside-case-study')
+parser.add_argument('--source-base-url', default='https://github.com/karroge10/ironside-case-study/blob/main/')
 args = parser.parse_args()
 rows = calculate()
 held = sum(row['calls'] for row in rows)

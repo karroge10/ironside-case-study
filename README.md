@@ -33,9 +33,11 @@ To repeat C2 independently, open a new AI session with no inherited conversation
 
 ## Share the working folder
 
-The public working repository is [ironside-case-study](https://github.com/karroge10/ironside-case-study). Use the [block-c submission branch](https://github.com/karroge10/ironside-case-study/tree/block-c) for the assembled work; `main` retains the original assessment until a final merge is explicitly approved. The supplied fictional source materials remain preserved. Public access was explicitly requested by the applicant.
+The public working repository is [ironside-case-study](https://github.com/karroge10/ironside-case-study). The assembled submission is on `main`; the block branches preserve the review stages. The [original baseline](https://github.com/karroge10/ironside-case-study/tree/e09d80872fdbd0c8bc8958a3abc732f2bebc7b4c) remains available in history. The supplied fictional source materials remain preserved. Public access and the final merge were explicitly requested by the applicant.
 
-GitHub Pages serves the rendered report from `block-c` at [the artifact URL](https://karroge10.github.io/ironside-case-study/), while the repository provides the working files. Rebuild with `python extra/build_summary.py`; it produces identical `summary.html` and `index.html`, with supporting links pointing to readable GitHub documents. For relative links in an offline working-folder copy, use `python extra/build_summary.py --source-base-url=`. Push an approved report update to `block-c` to trigger a Pages rebuild. 
+GitHub Pages serves the rendered report from `main` at [the artifact URL](https://karroge10.github.io/ironside-case-study/), while the repository provides the working files. Rebuild with `python extra/build_summary.py`; it produces identical `summary.html` and `index.html`, with supporting links pointing to readable GitHub documents on `main`. For relative links in an offline working-folder copy, use `python extra/build_summary.py --source-base-url=`. Push an approved report update to `main` to trigger a Pages rebuild. 
+
+The archived `workers/output/skill-recap-v1.md` and `after-recap-v1.md` preserve the first C2 test before the policy-reference revision. They are intentional evaluation evidence, not temporary files. Embedded fonts make the report portable; Python caches and local test copies are excluded.
 
 ## Three sentences for the submission
 

@@ -61,21 +61,9 @@ a{color:var(--accent); text-underline-position:from-font; text-decoration-thickn
 section{margin:0 0 44px}
 h2{font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-2); margin:0 0 6px; padding-top:8px; border-top:1px solid var(--rule)}
 .sec-lede{margin:0 0 18px; color:var(--ink-2)}
-.badge{display:inline-flex; align-items:center; gap:5px; padding:1px 9px; border-radius:999px; font-size:12px; font-weight:500; white-space:nowrap}
-.badge::before{content:""; width:11px; height:11px; flex:none; background:currentColor; -webkit-mask:var(--icon) center/contain no-repeat; mask:var(--icon) center/contain no-repeat}
-.badge.ok{background:var(--good-bg); color:var(--good); --icon:var(--i-ok)}
-.badge.warn{background:var(--warn-bg); color:var(--ink); --icon:var(--i-warn)} .badge.warn::before{background:var(--warn)}
-.badge.bad{background:var(--bad-bg); color:var(--bad); --icon:var(--i-bad)}
-.badge.info{background:var(--accent-soft); color:var(--accent); --icon:var(--i-info)}
-.pill{display:inline-block; font-family:var(--mono); font-size:11px; padding:1px 7px; border-radius:999px; border:1px solid var(--border); color:var(--ink-2); vertical-align:1px}
 .tldr,.note{font-size:14px; color:var(--ink-2); background:var(--accent-soft); border-radius:6px; padding:12px 16px; margin:0 0 28px}
 .tldr p:last-child{margin:0}
 .note{margin:14px 0 0; font-size:13px}
-.ask{background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--warn); border-radius:8px; padding:12px 16px 6px; margin:0 0 28px}
-.ask h2{border:0; padding:0; margin:0 0 8px; color:var(--warn)}
-.ask ol{margin:0 0 6px; padding-left:20px}
-.ask li{margin:0 0 6px}
-.ask li .why{display:block; font-size:13px; color:var(--muted)}
 .kpis{display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin:0 0 36px}
 .kpi{background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:14px 16px 12px; min-width:0}
 .kpi .l{font-size:12px; color:var(--ink-2)}
@@ -89,55 +77,12 @@ h2{font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:.08
 .card + .card,figure.chart + figure.chart,figure.compare + figure.compare{margin-top:16px}
 .card h3,figure.chart figcaption,figure.compare figcaption{font-size:15px; font-weight:600; margin:0 0 2px}
 .card .sub,figure.chart .sub,figure.compare .sub{font-size:12.5px; color:var(--muted); margin:0 0 10px}
-.legend{display:flex; flex-wrap:wrap; gap:6px 16px; font-size:12.5px; color:var(--ink-2); margin:0 0 10px}
-.legend i{display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:6px; vertical-align:-1px}
-.scope{display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:0 0 22px; padding:10px 0; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule)}
-.scope .lbl{font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-2)}
-.seg{display:inline-flex; border:1px solid var(--border); border-radius:6px; overflow:hidden; background:var(--surface)}
-.seg button{appearance:none; border:0; background:transparent; color:var(--ink-2); font:inherit; font-size:13.5px; padding:6px 14px; cursor:pointer; border-right:1px solid var(--border)}
-.seg button:last-child{border-right:0}
-.seg button[aria-pressed="true"]{background:var(--accent); color:#fff}
-.seg button:focus-visible{outline:2px solid var(--accent); outline-offset:-2px}
-.scope .hint{font-size:12.5px; color:var(--muted)}
 .hbar{display:grid; grid-template-columns:minmax(90px,max-content) 1fr max-content; gap:8px 12px; align-items:center; font-size:13px}
 .hbar .name{color:var(--ink-2); text-align:end; white-space:nowrap}
 .hbar .track{height:18px; position:relative}
 .hbar .fill{position:absolute; inset-block:0; inset-inline-start:0; max-width:100%; border-radius:0 4px 4px 0; background:var(--s1)}
 .hbar .fill:hover{filter:brightness(1.12)}
 .hbar .val{font-variant-numeric:tabular-nums; font-weight:500; font-size:12.5px}
-svg.line{width:100%; height:auto; display:block}
-svg.line .gridline{stroke:var(--grid); stroke-width:1}
-svg.line .axisline{stroke:var(--rule); stroke-width:1}
-svg.line text{font-family:var(--sans); font-size:11px; fill:var(--muted); font-variant-numeric:tabular-nums}
-svg.line .series{fill:none; stroke-width:2; stroke-linejoin:round; stroke-linecap:round}
-svg.line .dot{stroke:var(--surface); stroke-width:2}
-svg.line .endlabel{font-size:12px; font-weight:500; fill:var(--ink-2)}
-.canvas-box{position:relative; height:280px} .canvas-box.tall{height:340px}
-canvas{width:100%!important}
-.compare .pair{display:grid; grid-template-columns:1fr 1fr; gap:16px}
-.compare .pair.one{grid-template-columns:1fr}
-.compare .side{display:flex; flex-direction:column; gap:8px; min-width:0}
-.compare .tag{font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:.08em; color:var(--muted)}
-.compare .tag.after{color:var(--accent)}
-.compare .side p{font-size:13px; color:var(--ink-2); margin:0}
-.compare img,.compare video{display:block; width:100%; max-height:560px; object-fit:contain; background:var(--band); border-radius:6px}
-.compare img{cursor:zoom-in}
-.lightbox{position:fixed; inset:0; z-index:100; display:none; overflow:auto; background:rgba(10,10,9,.94); cursor:zoom-out; user-select:none; overscroll-behavior:contain}
-.lightbox.on{display:grid; place-items:center}
-.lightbox img{display:block; max-width:96vw; max-height:92vh; object-fit:contain; border-radius:4px; cursor:zoom-in}
-.lightbox.on.zoomed{display:block; cursor:grab}
-.lightbox.zoomed.dragging{cursor:grabbing}
-.lightbox.zoomed img{max-width:none; max-height:none; margin:0 auto; cursor:zoom-out}
-.lightbox .lb-bar{position:fixed; left:0; right:0; bottom:0; padding:9px 16px 11px; text-align:center; font-size:13px; color:#f3f2ec; background:#0a0a09; pointer-events:none}
-.lightbox .lb-bar span{color:#a9a79d; margin-left:12px; white-space:nowrap}
-.lightbox .lb-close{position:fixed; z-index:2; top:14px; right:16px; min-width:44px; height:44px; padding:0 18px; border:1px solid rgba(255,255,255,.4); border-radius:22px; background:#0a0a09; color:#fff; font:inherit; font-size:15px; line-height:1; cursor:pointer}
-.lightbox .lb-close:hover{background:rgba(40,40,38,.9)}
-.lightbox .lb-close:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
-.meter{margin:14px 0}
-.meter .row{display:flex; justify-content:space-between; font-size:13px; margin-bottom:6px}
-.meter .row b{font-variant-numeric:tabular-nums; font-weight:500}
-.meter .track{height:8px; border-radius:4px; background:var(--s1-track); overflow:hidden}
-.meter .fill{height:100%; border-radius:4px; background:var(--s1)}
 .tbl-wrap{overflow-x:auto; margin:8px 0 6px}
 table{border-collapse:collapse; width:100%; font-size:13px; font-variant-numeric:tabular-nums}
 th,td{padding:6px 10px; text-align:right; border-bottom:1px solid var(--grid); white-space:nowrap; vertical-align:top}
@@ -146,27 +91,6 @@ th:first-child,td:first-child,th.txt,td.txt{text-align:left}
 td.txt{white-space:normal}
 td.name{font-family:var(--mono); font-size:12.5px}
 tr.hl td{background:var(--accent-soft)}
-ul.check{list-style:none; padding:0; margin:0 0 16px}
-ul.check li{padding-inline-start:26px; position:relative; margin-bottom:6px}
-ul.check li::before{content:""; position:absolute; inset-inline-start:2px; top:4px; width:14px; height:14px; background:currentColor; -webkit-mask:var(--icon) center/contain no-repeat; mask:var(--icon) center/contain no-repeat}
-ul.check li.done::before{--icon:var(--i-ok); background:var(--good)}
-ul.check li.todo::before{--icon:var(--i-todo); background:var(--muted)}
-ul.check li.fail::before{--icon:var(--i-bad); background:var(--bad)}
-code{font-family:var(--mono); font-size:12px; background:var(--band); border-radius:3px; padding:1px 5px}
-pre{font-family:var(--mono); font-size:12.5px; line-height:1.6; background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:14px 18px; overflow-x:auto; margin:0 0 18px}
-pre code{background:none; padding:0; font-size:inherit}
-pre .add{color:var(--good); display:block}
-pre .del{color:var(--bad); display:block}
-details{margin-top:6px}
-summary{cursor:pointer; font-size:12px; color:var(--muted); user-select:none; list-style:none; display:inline-flex; gap:6px; align-items:center}
-summary::-webkit-details-marker{display:none}
-summary::before{content:"▸"; font-size:10px}
-details[open] summary::before{content:"▾"}
-summary:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:3px}
-details.block{background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:0 16px; margin:0 0 12px}
-details.block summary{display:flex; padding:12px 0; font-size:14px; font-weight:500; color:var(--ink)}
-details.block[open] summary{border-bottom:1px solid var(--grid); margin-bottom:12px}
-details.block > :last-child{margin-bottom:14px}
 .method{font-size:13.5px; color:var(--ink-2); padding-left:20px}
 .method li{margin:4px 0}
 footer.report{margin-top:52px; padding-top:16px; border-top:1px solid var(--rule); color:var(--ink-2); font-size:13px}
@@ -201,7 +125,7 @@ footer.report{margin-top:52px; padding-top:16px; border-top:1px solid var(--rule
 <script type="application/json" id="delivery-data">{"items": [{"name": "North", "value": 90.0}, {"name": "East", "value": 70.0}, {"name": "South", "value": 35.0}, {"name": "West", "value": 10.0}], "unit": "%", "max": 100}</script>
 <script type="application/json" id="coverage-data">{"items": [{"name": "North", "value": 95.0}, {"name": "East", "value": 93.3}, {"name": "South", "value": 90.0}, {"name": "West", "value": 13.3}], "unit": "%", "max": 100}</script>
 <div class="tbl-wrap"><table><thead><tr><th class="txt">Pod</th><th>Timely / held</th><th>Official result</th><th>Recorded</th></tr></thead><tbody><tr><td class="txt">North</td><td>36/40</td><td>90%</td><td>38/40</td></tr><tr><td class="txt">East</td><td>21/30</td><td>70%</td><td>28/30</td></tr><tr><td class="txt">South</td><td>14/40</td><td>35%</td><td>36/40</td></tr><tr><td class="txt">West</td><td>3/30</td><td>10%</td><td>4/30</td></tr></tbody></table></div>
-<p class="note">East's correct result is 70%. The dashboard's 75% matches division by recorded calls; its original formula is not supplied. Timestamp-based results still require a content audit. <a href="https://github.com/karroge10/ironside-case-study/blob/block-c/metrics.md">Analysis and evidence</a>.</p></section>
+<p class="note">East's correct result is 70%. The dashboard's 75% matches division by recorded calls; its original formula is not supplied. Timestamp-based results still require a content audit. <a href="https://github.com/karroge10/ironside-case-study/blob/main/metrics.md">Analysis and evidence</a>.</p></section>
 <section><h2>A one-week South pilot</h2>
 <p class="sec-lede">South has 20 late posts and a 74-minute median delay across 34 posts. Marcus wants recaps posted in 10 to 15 minutes. The first-week process should work without an engineering release.</p>
 <div class="tbl-wrap"><table><thead><tr><th class="txt">Timing</th><th class="txt">Proposed routine</th></tr></thead><tbody>
@@ -210,27 +134,20 @@ footer.report{margin-top:52px; padding-top:16px; border-top:1px solid var(--rule
 <tr><td class="txt">By 15 minutes</td><td class="txt">Stretch goal: publish a complete, approved recap. An unpublished draft does not count.</td></tr>
 <tr><td class="txt">By Friday</td><td class="txt">Aim for at least 80% of that week's calls with complete recaps posted within 60 minutes. Report both publication thresholds, misses and additional manual minutes.</td></tr>
 </tbody></table></div>
-<p>Count the first posted version that meets the checklist, supported by a delivery receipt. Keep phone calls and failures in the denominator. Engineering should trace delays before choosing a fix and test safe retries and manual takeover. <a href="https://github.com/karroge10/ironside-case-study/blob/block-c/plan.md">Full pilot plan</a> and <a href="https://github.com/karroge10/ironside-case-study/blob/block-c/fde-ticket.md">engineering request</a>.</p></section>
+<p>Count the first posted version that meets the checklist, supported by a delivery receipt. Keep phone calls and failures in the denominator. Engineering should trace delays before choosing a fix and test safe retries and manual takeover. <a href="https://github.com/karroge10/ironside-case-study/blob/main/plan.md">Full pilot plan</a> and <a href="https://github.com/karroge10/ironside-case-study/blob/main/fde-ticket.md">engineering request</a>.</p></section>
 <section><h2>Other decisions to keep visible</h2>
-<p>West has 26 unrecorded calls out of 30. Scope capture or confirmed notes with Lena; counting unposted emails would change the metric. For Kettle &amp; Crumb, confirm creator-approval ownership, sampling eligibility beyond the top-10 offer, the sample-list date and posting baseline. Reconcile the reported account GMV before changing reference data. <a href="https://github.com/karroge10/ironside-case-study/blob/block-c/answer.md">Affiliate briefing</a> and <a href="https://github.com/karroge10/ironside-case-study/blob/block-c/proposed-changes.md">updates for approval</a>.</p></section>
+<p>West has 26 unrecorded calls out of 30. Scope capture or confirmed notes with Lena; counting unposted emails would change the metric. For Kettle &amp; Crumb, confirm creator-approval ownership, sampling eligibility beyond the top-10 offer, the sample-list date and posting baseline. Reconcile the reported account GMV before changing reference data. <a href="https://github.com/karroge10/ironside-case-study/blob/main/answer.md">Affiliate briefing</a> and <a href="https://github.com/karroge10/ironside-case-study/blob/main/proposed-changes.md">updates for approval</a>.</p></section>
 <section><h2>What to automate next</h2>
 <p>Automate call-to-post tracking so every held call has a visible delivery status and late-call alert. Add source-aware recap checks before posting to catch unsupported commitments and restricted content. Build a consent-aware capture or confirmed-note path for WhatsApp calls so West can improve without changing the denominator.</p></section>
 <section><h2>Sources and method</h2>
-<ul class="method"><li><a href="https://github.com/karroge10/ironside-case-study/blob/block-c/calls.csv">Per-call log</a> and <a href="https://github.com/karroge10/ironside-case-study/blob/block-c/adoption.csv">dashboard</a>, recomputed with <a href="https://github.com/karroge10/ironside-case-study/blob/block-c/extra/metrics.py">Python</a>; late means more than 60 minutes after call end. Blank timestamps are not evidenced timely posts.</li><li><a href="https://github.com/karroge10/ironside-case-study/blob/block-c/slack-thread.txt">Pod-lead feedback</a> and <a href="https://github.com/karroge10/ironside-case-study/blob/block-c/brain/NOW.md">operating notes</a> support the bottleneck diagnosis. Proposed interventions are recommendations, not agreed or achieved outcomes.</li></ul></section>
-<footer class="report"><p><a href="https://github.com/karroge10/ironside-case-study/tree/block-c">Open working folder</a> | <a href="https://github.com/karroge10/ironside-case-study/blob/block-c/README.md">Submission guide</a> | <a href="https://github.com/karroge10/ironside-case-study/blob/block-c/diagnosis.md">Before and after</a> | <a href="https://github.com/karroge10/ironside-case-study/blob/block-c/validation.md">Validation</a> | <a href="https://github.com/karroge10/ironside-case-study/blob/block-c/log.md">Activity log</a> | <a href="https://github.com/karroge10/ironside-case-study/blob/block-c/extra/README.md">Runnable checks</a></p><p>Calculations, recap structure and checker tests verified. Business execution and future performance are not verified. The activity log distinguishes timing evidence from estimates.</p></footer>
+<ul class="method"><li><a href="https://github.com/karroge10/ironside-case-study/blob/main/calls.csv">Per-call log</a> and <a href="https://github.com/karroge10/ironside-case-study/blob/main/adoption.csv">dashboard</a>, recomputed with <a href="https://github.com/karroge10/ironside-case-study/blob/main/extra/metrics.py">Python</a>; late means more than 60 minutes after call end. Blank timestamps are not evidenced timely posts.</li><li><a href="https://github.com/karroge10/ironside-case-study/blob/main/slack-thread.txt">Pod-lead feedback</a> and <a href="https://github.com/karroge10/ironside-case-study/blob/main/brain/NOW.md">operating notes</a> support the bottleneck diagnosis. Proposed interventions are recommendations, not agreed or achieved outcomes.</li></ul></section>
+<footer class="report"><p><a href="https://github.com/karroge10/ironside-case-study">Open working folder</a> | <a href="https://github.com/karroge10/ironside-case-study/blob/main/README.md">Submission guide</a> | <a href="https://github.com/karroge10/ironside-case-study/blob/main/diagnosis.md">Before and after</a> | <a href="https://github.com/karroge10/ironside-case-study/blob/main/validation.md">Validation</a> | <a href="https://github.com/karroge10/ironside-case-study/blob/main/log.md">Activity log</a> | <a href="https://github.com/karroge10/ironside-case-study/blob/main/extra/README.md">Runnable checks</a></p><p>Calculations, recap structure and checker tests verified. Business execution and future performance are not verified. The activity log distinguishes timing evidence from estimates.</p></footer>
 </div>
 <script data-inline="chart"></script>
 <script>
-const LANG = document.documentElement.lang || 'ru';
+const LANG = document.documentElement.lang || 'en';
 const NF = new Intl.NumberFormat(LANG);
-const HAS_CHART = typeof Chart !== 'undefined';
-const TABLE_WORD = LANG === 'ru' ? 'таблица' : 'table';
-
 document.querySelectorAll('[data-bars]').forEach(renderBars);
-document.querySelectorAll('[data-line]').forEach(renderLine);
-document.querySelectorAll('[data-chart]').forEach(renderChart);
-window.addEventListener('beforeprint', openAllDetails);
-setupLightbox();
 
 function renderBars(el) {
   const data = readData(el.dataset.bars);
@@ -251,277 +168,6 @@ function renderBars(el) {
   }
 }
 
-function renderLine(el) {
-  const data = readData(el.dataset.line);
-  const L = 46, R = 580, T = 20, B = 180;
-  const count = data.labels.length;
-  const all = data.series.flatMap(s => s.values).filter(v => v != null);
-  const ticks = niceTicks(Math.min(...all), Math.max(...all));
-  const lo = ticks[0];
-  const hi = ticks[ticks.length - 1];
-  const x = i => count === 1 ? (L + R) / 2 : L + 14 + i * (R - L - 28) / (count - 1);
-  const y = v => B - (v - lo) / (hi - lo) * (B - T);
-  const caption = el.querySelector('figcaption');
-  const svg = svgEl('svg', {class: 'line', viewBox: '0 0 640 220', role: 'img', 'aria-label': caption ? caption.textContent : ''});
-
-  ticks.forEach((t, k) => {
-    const ty = y(t);
-    const line = svgEl('line', {class: k === 0 ? 'axisline' : 'gridline', x1: L, y1: ty, x2: R, y2: ty});
-    const text = svgEl('text', {x: L - 6, y: ty + 4, 'text-anchor': 'end'}, NF.format(t));
-    svg.append(line, text);
-  });
-  for (const i of labelIndexes(count)) {
-    const anchor = i === 0 && count > 1 ? 'start' : i === count - 1 && count > 1 ? 'end' : 'middle';
-    const text = svgEl('text', {x: x(i), y: B + 22, 'text-anchor': anchor}, data.labels[i]);
-    svg.append(text);
-  }
-
-  const ends = [];
-  data.series.forEach((s, n) => {
-    const color = s.color || 'var(--s' + (n + 1) + ')';
-    for (const run of segments(s.values)) {
-      const points = run.map(i => x(i) + ',' + y(s.values[i])).join(' ');
-      const poly = svgEl('polyline', {class: 'series', stroke: color, points});
-      svg.append(poly);
-    }
-    const last = lastIndex(s.values);
-    if (last < 0) return;
-    const dot = svgEl('circle', {class: 'dot', cx: x(last), cy: y(s.values[last]), r: 4, fill: color});
-    svg.append(dot);
-    ends.push({x: x(last), y: y(s.values[last]), text: fmt(s.values[last], data.unit)});
-  });
-  ends.sort((a, b) => a.y - b.y);
-  ends.forEach((e, k) => {
-    if (k > 0 && e.y - ends[k - 1].y < 14) e.y = ends[k - 1].y + 14;
-    const label = svgEl('text', {class: 'endlabel', x: e.x + 12, y: e.y + 4}, e.text);
-    svg.append(label);
-  });
-
-  if (data.series.length > 1) {
-    const legend = makeLegend(data.series);
-    el.append(legend);
-  }
-  const twin = tableTwin(data, false);
-  el.append(svg, twin);
-}
-
-function renderChart(el) {
-  const data = readData(el.dataset.chart);
-  if (!HAS_CHART) {
-    const twin = tableTwin(data, true);
-    el.append(twin);
-    return;
-  }
-  const box = make('div', data.tall ? 'canvas-box tall' : 'canvas-box');
-  const canvas = document.createElement('canvas');
-  box.append(canvas);
-  const twin = tableTwin(data, false);
-  el.append(box, twin);
-  const config = chartConfig(data);
-  new Chart(canvas, config);
-}
-
-function openAllDetails() {
-  document.querySelectorAll('details').forEach(d => { d.open = true; });
-}
-
-function setupLightbox() {
-  const images = [...document.querySelectorAll('.compare img')];
-  if (!images.length) return;
-  const ru = LANG === 'ru';
-  const box = make('div', 'lightbox');
-  box.setAttribute('role', 'dialog');
-  box.setAttribute('aria-modal', 'true');
-  const view = document.createElement('img');
-  view.draggable = false;
-  const bar = make('div', 'lb-bar');
-  const close = make('button', 'lb-close', ru ? '× Закрыть' : '× Close');
-  close.type = 'button';
-  close.setAttribute('aria-label', ru ? 'Закрыть' : 'Close');
-  box.append(view, bar, close);
-  document.body.append(box);
-  const hint = ru ? 'клик: увеличить, тянуть: двигать, ← →: листать, Esc: закрыть' : 'click: zoom, drag: pan, ← →: browse, Esc: close';
-  let current = 0;
-  let drag = null;
-
-  images.forEach((img, i) => img.addEventListener('click', () => show(i)));
-  close.addEventListener('click', hide);
-  box.addEventListener('pointerdown', startDrag);
-  box.addEventListener('pointermove', moveDrag);
-  box.addEventListener('pointerup', endDrag);
-  box.addEventListener('pointercancel', () => { drag = null; box.classList.remove('dragging'); });
-  document.addEventListener('keydown', onKey);
-
-  function show(i) {
-    current = (i + images.length) % images.length;
-    const source = images[current];
-    view.src = source.currentSrc || source.src;
-    view.alt = source.alt;
-    const count = images.length > 1 ? (current + 1) + ' / ' + images.length + '  ' : '';
-    bar.textContent = count + source.alt;
-    const hintNode = make('span', '', hint);
-    bar.append(hintNode);
-    setZoom(false, 0);
-    box.classList.add('on');
-    document.body.style.overflow = 'hidden';
-    close.focus();
-  }
-
-  function hide() {
-    setZoom(false, 0);
-    box.classList.remove('on');
-    document.body.style.overflow = '';
-  }
-
-  function onKey(e) {
-    if (!box.classList.contains('on')) return;
-    if (e.key === 'Escape') hide();
-    if (e.key === 'ArrowRight') show(current + 1);
-    if (e.key === 'ArrowLeft') show(current - 1);
-  }
-
-  function startDrag(e) {
-    if (e.button !== 0 || e.target === close) return;
-    drag = {x: e.clientX, y: e.clientY, left: box.scrollLeft, top: box.scrollTop, target: e.target, moved: false};
-    box.setPointerCapture(e.pointerId);
-  }
-
-  function moveDrag(e) {
-    if (!drag) return;
-    const dx = e.clientX - drag.x;
-    const dy = e.clientY - drag.y;
-    if (Math.abs(dx) + Math.abs(dy) > 4) drag.moved = true;
-    if (!drag.moved || !box.classList.contains('zoomed')) return;
-    box.classList.add('dragging');
-    box.scrollLeft = drag.left - dx;
-    box.scrollTop = drag.top - dy;
-  }
-
-  function endDrag(e) {
-    if (!drag) return;
-    const {moved, target} = drag;
-    drag = null;
-    box.classList.remove('dragging');
-    if (moved || target === close) return;
-    if (target === view) toggleZoom(e);
-    else hide();
-  }
-
-  function toggleZoom(e) {
-    if (box.classList.contains('zoomed')) {
-      setZoom(false, 0);
-      return;
-    }
-    const rect = view.getBoundingClientRect();
-    const fx = (e.clientX - rect.left) / rect.width;
-    const fy = (e.clientY - rect.top) / rect.height;
-    const width = Math.max(view.naturalWidth, rect.width * 2);
-    setZoom(true, width);
-    box.scrollLeft = view.offsetLeft + fx * view.offsetWidth - e.clientX;
-    box.scrollTop = view.offsetTop + fy * view.offsetHeight - e.clientY;
-  }
-
-  function setZoom(on, width) {
-    box.classList.toggle('zoomed', on);
-    view.style.width = on ? width + 'px' : '';
-  }
-}
-
-function chartConfig(data) {
-  const isBar = data.type === 'bar';
-  const surface = token('--surface');
-  const datasets = data.series.map((s, n) => {
-    const color = token('--s' + (n + 1));
-    if (isBar) {
-      return {label: s.name, data: s.values, backgroundColor: color, borderColor: surface, borderWidth: 1,
-        maxBarThickness: 22, borderRadius: 3, borderSkipped: false};
-    }
-    return {label: s.name, data: s.values, borderColor: color, backgroundColor: color, borderWidth: 2,
-      tension: 0.25, pointRadius: 3, pointBorderColor: surface, pointBorderWidth: 1, spanGaps: true};
-  });
-  const tickStyle = {color: token('--muted'), font: {family: token('--sans'), size: 11}};
-  return {
-    type: data.type,
-    data: {labels: data.labels, datasets},
-    options: {
-      animation: false,
-      maintainAspectRatio: false,
-      interaction: {mode: 'index', intersect: false},
-      plugins: {
-        legend: {display: data.series.length > 1, position: 'top', align: 'start',
-          labels: {usePointStyle: true, pointStyle: 'rectRounded', boxWidth: 10, color: token('--ink-2'), font: {family: token('--sans'), size: 12}}},
-        tooltip: {backgroundColor: surface, borderColor: token('--grid'), borderWidth: 1, titleColor: token('--ink'), bodyColor: token('--ink-2'),
-          callbacks: {label: c => c.dataset.label + ': ' + fmt(c.parsed.y, data.unit)}}
-      },
-      scales: {
-        x: {stacked: !!data.stacked, grid: {display: false}, border: {display: false}, ticks: tickStyle},
-        y: {stacked: !!data.stacked, beginAtZero: isBar, grid: {color: token('--grid'), drawTicks: false}, border: {display: false}, ticks: {...tickStyle, padding: 8}}
-      }
-    }
-  };
-}
-
-function tableTwin(data, open) {
-  const details = document.createElement('details');
-  details.open = open;
-  const summary = make('summary', '', TABLE_WORD);
-  const head = data.series.map(s => '<th>' + escapeHtml(s.name) + '</th>').join('');
-  const rows = data.labels.map((label, i) => {
-    const cells = data.series.map(s => '<td>' + fmt(s.values[i]) + '</td>').join('');
-    return '<tr><td class="name">' + escapeHtml(label) + '</td>' + cells + '</tr>';
-  }).join('');
-  const wrap = make('div', 'tbl-wrap');
-  wrap.innerHTML = '<table><thead><tr><th></th>' + head + '</tr></thead><tbody>' + rows + '</tbody></table>';
-  details.append(summary, wrap);
-  return details;
-}
-
-function makeLegend(series) {
-  const legend = make('div', 'legend');
-  series.forEach((s, n) => {
-    const item = make('span', '', s.name);
-    const swatch = document.createElement('i');
-    swatch.style.background = s.color || 'var(--s' + (n + 1) + ')';
-    item.prepend(swatch);
-    legend.append(item);
-  });
-  return legend;
-}
-
-function niceTicks(min, max) {
-  if (min === max) { min -= 1; max += 1; }
-  const raw = (max - min) / 3;
-  const pow = Math.pow(10, Math.floor(Math.log10(raw)));
-  const f = raw / pow;
-  const step = (f <= 1 ? 1 : f <= 2 ? 2 : f <= 2.5 ? 2.5 : f <= 5 ? 5 : 10) * pow;
-  const ticks = [];
-  for (let t = Math.floor(min / step) * step; t <= max + step * 0.999; t += step) ticks.push(+t.toFixed(10));
-  return ticks;
-}
-
-function labelIndexes(count) {
-  if (count <= 8) return [...Array(count).keys()];
-  const picks = new Set();
-  for (let k = 0; k < 6; k++) picks.add(Math.round(k * (count - 1) / 5));
-  return [...picks];
-}
-
-function segments(values) {
-  const runs = [];
-  let run = [];
-  values.forEach((v, i) => {
-    if (v == null) { if (run.length) runs.push(run); run = []; }
-    else run.push(i);
-  });
-  if (run.length) runs.push(run);
-  return runs;
-}
-
-function lastIndex(values) {
-  for (let i = values.length - 1; i >= 0; i--) if (values[i] != null) return i;
-  return -1;
-}
-
 function readData(id) {
   const source = document.getElementById(id);
   return JSON.parse(source.textContent);
@@ -533,27 +179,11 @@ function fmt(v, unit) {
   return unit ? number + ' ' + unit : number;
 }
 
-function token(name) {
-  const styles = getComputedStyle(document.documentElement);
-  return styles.getPropertyValue(name).trim();
-}
-
 function make(tag, cls, text) {
   const node = document.createElement(tag);
   if (cls) node.className = cls;
   if (text != null) node.textContent = text;
   return node;
-}
-
-function svgEl(tag, attrs, text) {
-  const node = document.createElementNS('http://www.w3.org/2000/svg', tag);
-  for (const [k, v] of Object.entries(attrs)) node.setAttribute(k, v);
-  if (text != null) node.textContent = text;
-  return node;
-}
-
-function escapeHtml(s) {
-  return String(s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'})[c]);
 }
 </script>
 </body>
