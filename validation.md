@@ -54,7 +54,7 @@ The applicant then requested the saved `html-report` template and full container
 
 Local session metadata contained 37 completed primary-session turn windows before the final publishing task. Summing matching task-start/task-complete timestamps gave 48.9 minutes, including tool calls and waits; overnight and between-turn gaps were excluded. Approximately one AI hour is a rough reporting estimate including final publication work, not a CPU-time measurement. Parallel child work is not added again.
 
-Human time was not recorded. Between completed turns and the next request, gaps of at most five minutes totaled 65.3 minutes; gaps of at most fifteen minutes totaled 93.9 minutes. These thresholds are heuristics, not proof of continuous human work, and omit reading during AI turns or work in other tools. The proposed 1 to 1.5 human hours is explicitly tentative and requires applicant confirmation. Calendar span is not treated as working time.
+Human time was not recorded. Between completed turns and the next request, gaps of at most five minutes totaled 65.3 minutes; gaps of at most fifteen minutes totaled 93.9 minutes. These thresholds are heuristics, not proof of continuous human work, and omit reading during AI turns or work in other tools. The proposed 1 to 1.5 human hours is explicitly tentative; these logs cannot verify actual human working time. Calendar span is not treated as working time.
 
 ## Publication preparation
 
